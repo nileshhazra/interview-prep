@@ -225,3 +225,215 @@ Here’s a **3-month study plan**:
 
 ---
 
+**Basic concepts of arrays** and **how to work with them in Python**. Overview:
+
+---
+
+## **1. What is an Array?**
+- An **array** is a collection of elements stored in a contiguous memory location.
+- In Python, we typically use **lists** to represent arrays because Python does not have a built-in array data structure like C or Java.
+
+---
+
+## **2. Array Basics in Python**
+
+### **Creating an Array (List)**
+```python
+# Creating an array (list)
+nums = [1, 2, 3, 4, 5]
+print(nums)  # Output: [1, 2, 3, 4, 5]
+```
+
+---
+
+### **Accessing Elements**
+- Use **indexing** to access elements.
+- Indexing starts from `0` in Python.
+
+```python
+nums = [10, 20, 30, 40, 50]
+print(nums[0])  # Output: 10 (first element)
+print(nums[-1])  # Output: 50 (last element)
+```
+
+---
+
+### **Traversing an Array**
+- Use a `for` loop to iterate through the array.
+
+```python
+nums = [1, 2, 3, 4, 5]
+
+# Traversing using a for loop
+for num in nums:
+    print(num, end=" ")  # Output: 1 2 3 4 5
+```
+
+---
+
+### **Adding Elements**
+- Use `append()` to add an element to the end of the array.
+- Use `insert()` to add an element at a specific index.
+
+```python
+nums = [1, 2, 3]
+
+# Append an element
+nums.append(4)
+print(nums)  # Output: [1, 2, 3, 4]
+
+# Insert an element at index 1
+nums.insert(1, 10)
+print(nums)  # Output: [1, 10, 2, 3, 4]
+```
+
+---
+
+### **Removing Elements**
+- Use `remove()` to remove a specific element.
+- Use `pop()` to remove an element by index (default is the last element).
+
+```python
+nums = [1, 2, 3, 4, 5]
+
+# Remove a specific element
+nums.remove(3)
+print(nums)  # Output: [1, 2, 4, 5]
+
+# Remove the last element
+nums.pop()
+print(nums)  # Output: [1, 2, 4]
+
+# Remove an element at index 1
+nums.pop(1)
+print(nums)  # Output: [1, 4]
+```
+
+---
+
+### **Slicing an Array**
+- Use slicing to extract a portion of the array.
+
+```python
+nums = [1, 2, 3, 4, 5]
+
+# Slice from index 1 to 3 (exclusive)
+print(nums[1:4])  # Output: [2, 3, 4]
+
+# Slice from the beginning to index 2 (exclusive)
+print(nums[:3])  # Output: [1, 2, 3]
+
+# Slice from index 2 to the end
+print(nums[2:])  # Output: [3, 4, 5]
+```
+
+---
+
+### **Length of an Array**
+- Use `len()` to get the number of elements in the array.
+
+```python
+nums = [1, 2, 3, 4, 5]
+print(len(nums))  # Output: 5
+```
+
+---
+
+### **Sorting an Array**
+- Use `sort()` to sort the array in ascending order.
+- Use `sorted()` to return a new sorted array without modifying the original.
+
+```python
+nums = [5, 2, 9, 1, 5]
+
+# Sort in ascending order
+nums.sort()
+print(nums)  # Output: [1, 2, 5, 5, 9]
+
+# Sort in descending order
+nums.sort(reverse=True)
+print(nums)  # Output: [9, 5, 5, 2, 1]
+
+# Use sorted() to get a new sorted array
+nums = [5, 2, 9, 1, 5]
+sorted_nums = sorted(nums)
+print(sorted_nums)  # Output: [1, 2, 5, 5, 9]
+```
+
+---
+
+### **Searching in an Array**
+- Use the `in` keyword to check if an element exists in the array.
+
+```python
+nums = [1, 2, 3, 4, 5]
+
+# Check if 3 is in the array
+print(3 in nums)  # Output: True
+
+# Check if 6 is in the array
+print(6 in nums)  # Output: False
+```
+
+---
+
+### **Two-Pointer Technique**
+- Use two pointers to solve problems like finding pairs or subarrays.
+
+```python
+nums = [1, 2, 3, 4, 5]
+target = 6
+
+# Two-pointer approach to find a pair that sums to the target
+left, right = 0, len(nums) - 1
+while left < right:
+    current_sum = nums[left] + nums[right]
+    if current_sum == target:
+        print(f"Pair found: {nums[left]}, {nums[right]}")
+        break
+    elif current_sum < target:
+        left += 1
+    else:
+        right -= 1
+# Output: Pair found: 1, 5
+```
+
+---
+
+### **Sliding Window Technique**
+- Use a sliding window to solve problems involving subarrays.
+
+```python
+nums = [1, 3, 2, 5, 1, 1, 2, 3]
+k = 3
+
+# Find the maximum sum of a subarray of size k
+max_sum = 0
+current_sum = 0
+
+for i in range(len(nums)):
+    current_sum += nums[i]
+    if i >= k - 1:
+        max_sum = max(max_sum, current_sum)
+        current_sum -= nums[i - (k - 1)]
+
+print(max_sum)  # Output: 8 (subarray [5, 1, 2])
+```
+
+---
+
+### **Common Array Operations**
+| **Operation**         | **Method**         | **Time Complexity** |
+|------------------------|--------------------|----------------------|
+| Access element         | `nums[i]`         | O(1)                |
+| Append element         | `nums.append(x)`  | O(1)                |
+| Insert element         | `nums.insert(i, x)` | O(n)              |
+| Remove element         | `nums.remove(x)`  | O(n)                |
+| Pop element            | `nums.pop(i)`     | O(n) (O(1) for last)|
+| Search element         | `x in nums`       | O(n)                |
+| Sort array             | `nums.sort()`     | O(n log n)          |
+
+---
+
+
+
