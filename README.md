@@ -437,3 +437,221 @@ print(max_sum)  # Output: 8 (subarray [5, 1, 2])
 
 
 
+## **Strings Basics in Python**
+
+### **1. What is a String?**
+- A **string** is a sequence of characters.
+- Strings in Python are **immutable**, meaning you cannot modify them after creation.
+
+---
+
+### **2. Creating Strings**
+```python
+# Single and double quotes
+string1 = 'Hello'
+string2 = "World"
+print(string1, string2)  # Output: Hello World
+
+# Multiline strings
+multiline_string = """This is
+a multiline
+string."""
+print(multiline_string)
+```
+
+---
+
+### **3. Accessing Characters**
+- Use **indexing** to access individual characters.
+- Indexing starts from `0`.
+
+```python
+string = "Python"
+print(string[0])   # Output: P (first character)
+print(string[-1])  # Output: n (last character)
+```
+
+---
+
+### **4. Slicing Strings**
+- Use slicing to extract substrings.
+
+```python
+string = "Python Programming"
+
+# Slice from index 0 to 5 (exclusive)
+print(string[0:6])  # Output: Python
+
+# Slice from the beginning to index 5 (exclusive)
+print(string[:6])  # Output: Python
+
+# Slice from index 7 to the end
+print(string[7:])  # Output: Programming
+
+# Slice with a step
+print(string[0:6:2])  # Output: Pto (every 2nd character)
+```
+
+---
+
+### **5. String Length**
+- Use `len()` to get the length of a string.
+
+```python
+string = "Python"
+print(len(string))  # Output: 6
+```
+
+---
+
+### **6. String Concatenation**
+- Use `+` to concatenate strings.
+- Use `*` to repeat strings.
+
+```python
+string1 = "Hello"
+string2 = "World"
+
+# Concatenation
+print(string1 + " " + string2)  # Output: Hello World
+
+# Repetition
+print(string1 * 3)  # Output: HelloHelloHello
+```
+
+---
+
+### **7. String Methods**
+Python provides many built-in methods to manipulate strings.
+
+#### **Changing Case**
+```python
+string = "Python Programming"
+
+print(string.upper())  # Output: PYTHON PROGRAMMING
+print(string.lower())  # Output: python programming
+print(string.capitalize())  # Output: Python programming
+print(string.title())  # Output: Python Programming
+print(string.swapcase())  # Output: pYTHON pROGRAMMING
+```
+
+#### **Searching and Replacing**
+```python
+string = "Python Programming"
+
+# Find the index of a substring
+print(string.find("Pro"))  # Output: 7
+
+# Check if a substring exists
+print("Python" in string)  # Output: True
+
+# Replace a substring
+print(string.replace("Python", "Java"))  # Output: Java Programming
+```
+
+#### **Splitting and Joining**
+```python
+string = "Python,Java,C++"
+
+# Split into a list
+languages = string.split(",")
+print(languages)  # Output: ['Python', 'Java', 'C++']
+
+# Join a list into a string
+joined_string = " | ".join(languages)
+print(joined_string)  # Output: Python | Java | C++
+```
+
+---
+
+### **8. String Iteration**
+- Use a `for` loop to iterate through each character in a string.
+
+```python
+string = "Python"
+
+for char in string:
+    print(char, end=" ")  # Output: P y t h o n
+```
+
+---
+
+### **9. String Validation**
+- Use built-in methods to validate strings.
+
+```python
+string = "Python123"
+
+print(string.isalpha())  # Output: False (contains numbers)
+print(string.isdigit())  # Output: False (contains letters)
+print(string.isalnum())  # Output: True (letters and numbers only)
+print("12345".isdigit())  # Output: True
+print("   ".isspace())    # Output: True
+```
+
+---
+
+### **10. String Formatting**
+- Use **f-strings** or the `format()` method for string interpolation.
+
+#### **Using f-strings**
+```python
+name = "Nilesh"
+age = 25
+
+print(f"My name is {name} and I am {age} years old.")
+# Output: My name is Nilesh and I am 25 years old.
+```
+
+#### **Using `format()`**
+```python
+name = "Nilesh"
+age = 25
+
+print("My name is {} and I am {} years old.".format(name, age))
+# Output: My name is Nilesh and I am 25 years old.
+```
+
+---
+
+### **11. Common String Operations**
+| **Operation**         | **Method**         | **Example**                          | **Output**               |
+|------------------------|--------------------|--------------------------------------|--------------------------|
+| Convert to uppercase   | `upper()`          | `"hello".upper()`                    | `"HELLO"`                |
+| Convert to lowercase   | `lower()`          | `"HELLO".lower()`                    | `"hello"`                |
+| Check substring        | `in`              | `"Py" in "Python"`                   | `True`                   |
+| Find substring index   | `find()`          | `"Python".find("th")`                | `2`                      |
+| Replace substring      | `replace()`       | `"Python".replace("Py", "Ja")`       | `"Jathon"`               |
+| Split string           | `split()`         | `"a,b,c".split(",")`                 | `['a', 'b', 'c']`        |
+| Join list to string    | `join()`          | `",".join(['a', 'b', 'c'])`          | `"a,b,c"`                |
+
+---
+
+### **12. Advanced String Techniques**
+#### **Reversing a String**
+```python
+string = "Python"
+reversed_string = string[::-1]
+print(reversed_string)  # Output: nohtyP
+```
+
+#### **Checking for Palindromes**
+```python
+string = "madam"
+is_palindrome = string == string[::-1]
+print(is_palindrome)  # Output: True
+```
+
+#### **Counting Characters**
+```python
+string = "hello"
+char_count = {}
+for char in string:
+    char_count[char] = char_count.get(char, 0) + 1
+print(char_count)  # Output: {'h': 1, 'e': 1, 'l': 2, 'o': 1}
+```
+
+---
+
+
+
